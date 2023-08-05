@@ -14,7 +14,7 @@ const Navbar = () =>{
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
-                <div className="navbar-nav ms-auto p-4 p-lg-0">
+                <div className="navbar-nav ms-auto p-4 p-lg-0" style={{marginTop:"20px"}}>
                     <NavLink to="Home" className="nav-item nav-link active">Home</NavLink>
                     <NavLink to='About' className="nav-item nav-link">About</NavLink>
                     <div className="nav-item dropdown">
@@ -28,17 +28,16 @@ const Navbar = () =>{
                         <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div className="dropdown-menu rounded-0 m-0">
                             <NavLink to="Category" className="dropdown-item">Job Category</NavLink>
-                            <a href="testimonial.html" className="dropdown-item">Testimonial</a>
-                            <a href="404.html" className="dropdown-item">404</a>
+                            <a href="/" className="dropdown-item">Testimonial</a>
+                            <a href="/" className="dropdown-item">404</a>
                         </div>
                     </div>
                     <NavLink to="Contact" className="nav-item nav-link">Contact</NavLink>
-                </div>
-                
-                    <NavLink to="Jobpost" className="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">
+                    <NavLink to="Jobpost" className="btn btn-primary rounded-0 py-4 px-lg-3 d-none d-lg-block" style={{marginTop:"-20px"}}>
                         
                         Post A Job<i className="fa fa-arrow-right ms-3"></i></NavLink>
-                
+
+                </div>
             </div>
         </nav>
         </>
