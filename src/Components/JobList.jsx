@@ -1,6 +1,7 @@
 
 import React from "react"
-import Navbar from "./Navbar"
+
+import { NavLink } from "react-router-dom"
 
 const JobList = () =>{
     return(
@@ -77,7 +78,7 @@ const JobList = () =>{
                                     <div className="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                         <div className="d-flex mb-3">
                                             <a className="btn btn-light btn-square me-3" href=""><i className="far fa-heart text-primary"></i></a>
-                                            <a className="btn btn-primary" href="">Apply Now</a>
+                                            <NavLink className="btn btn-primary" to="/Jobdetail">Apply Now</NavLink>
                                         </div>
                                         <small className="text-truncate"><i className="far fa-calendar-alt text-primary me-2"></i>Date Line: 01 Jan, 2045</small>
                                     </div>

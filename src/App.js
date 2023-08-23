@@ -14,6 +14,8 @@ import About from './Components/About';
 import Jobpost from './Components/Jobpost';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
+import UserProfile from './Components/Userprofile';
+import Search from './Components/Search';
 
 function App() {
   return (
@@ -31,8 +33,12 @@ function App() {
           <Route path='/Login' element={<Login />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/About' element={<About />} />
+          <Route path='/Userprofile' element={<UserProfile />} />
+          <Route path='/Search' element={<Search />} />
         </Routes>
-        <Footer />
+       
+           <Footer />
+       
       </div>
     </div>
   );
