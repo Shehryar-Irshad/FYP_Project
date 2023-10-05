@@ -21,7 +21,7 @@ const Footer = () => {
                 <div className="copyright">
                     <div className="row">
                         <div className="col-md-6 text-md-start mb-3 mb-md-0" style={{width:"250px"}}>
-                            &copy; <a className="border-bottom" href="#">Job Entry</a>, All Right Reserved. 
+                            &copy; <a className="border-bottom" >Job Entry</a>, All Right Reserved. 
 							
                         </div>
                     

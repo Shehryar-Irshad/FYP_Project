@@ -32,7 +32,9 @@ const Login = () =>{
         console.log("Login successful");
 
         setPost("Login successful");
-    
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);
         }else {
           // Handle login error, display error message
           console.error('Login failed');

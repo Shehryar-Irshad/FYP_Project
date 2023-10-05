@@ -1,5 +1,6 @@
 import React from "react";
-import Footer from "./Footer";
+
+import {NavLink} from "react-router-dom";
 
 const Contact = () =>{
     return(
@@ -9,8 +10,8 @@ const Contact = () =>{
                 <h1 class="display-3 text-white mb-3 animated slideInDown">Contact</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item"><NavLink to="/Home">Home</NavLink></li>
+                        <li class="breadcrumb-item"><NavLink to="/Home">Pages</NavLink></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
                     </ol>
                 </nav>

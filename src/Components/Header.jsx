@@ -27,9 +27,9 @@ const Header = () => {
                             <NavLink to="Search" className="btn btn-primary m-2" style={{width:"150px"}}>
                                 Search a Job <img style={{height:"20px", width:"15px"}} src={searchpic}/>
                             </NavLink><br/>
-                            <button className="btn btn-primary m-2" style={{width:"150px"}}>
+                            <NavLink to="Talent" className="btn btn-primary m-2" style={{width:"150px"}}>
                                 Find a Talent <img style={{height:"20px", width:"20px"}} src={talent} />
-                            </button>
+                            </NavLink>
                         </div>
                         <div className="d-flex">
                             <NavLink to="login" className="btn btn-primary m-2" style={{width:"150px"}}>

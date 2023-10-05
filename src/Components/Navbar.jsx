@@ -7,9 +7,9 @@ const Navbar = () =>{
     return(
         <>
         <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="index.html" className="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <NavLink  className="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
                 <h1 className="m-0 text-primary">JobEntry</h1>
-            </a>
+            </NavLink>
             <button className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -18,18 +18,10 @@ const Navbar = () =>{
                     <NavLink to="Home" className="nav-item nav-link active">Home</NavLink>
                     <NavLink to='About' className="nav-item nav-link">About</NavLink>
                     <div className="nav-item dropdown">
-                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
+                        <a  className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
                         <div className="dropdown-menu rounded-0 m-0">
                             <NavLink to="JobList" className="dropdown-item">Job List</NavLink>
                             <NavLink to="Jobdetail" className="dropdown-item">Job Detail</NavLink>
-                        </div>
-                    </div>
-                    <div className="nav-item dropdown">
-                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div className="dropdown-menu rounded-0 m-0">
-                            <NavLink to="Category" className="dropdown-item">Job Category</NavLink>
-                            <a href="/" className="dropdown-item">Testimonial</a>
-                            <a href="/" className="dropdown-item">404</a>
                         </div>
                     </div>
                     <NavLink to="Contact" className="nav-item nav-link">Contact</NavLink>

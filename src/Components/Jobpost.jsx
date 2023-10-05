@@ -4,12 +4,12 @@ import axios from "axios";
 const Jobpost = () => {
 
   const [formData, setFormData] = useState({
-    companyName: "",
+    company_name: "",
     email: "",
-    jobTitle: "",
+    job_tittle: "",
     description: "",
-    requirements: "",
-    applyDate: "",
+    requirments: "",
+    date: "",
   });
 
   const [post, setPost] = useState('');
@@ -45,7 +45,7 @@ const Jobpost = () => {
       <form className="text-center" style={{ paddingTop: "20px", paddingBottom: "10px" }} onSubmit={handleSubmit}>
         <div className="row mb-3">
           <div className="col">
-            <input type="text" className="form-control" name="companyName" placeholder="Company name" aria-label="Company name" value={formData.companyName} onChange={handleChange} />
+            <input type="text" className="form-control" name="company_name" placeholder="Company name" aria-label="Company name" value={formData.company_name} onChange={handleChange} />
           </div>
           <div className="col">
             <input type="text" className="form-control" name="email" placeholder="Email" aria-label="Email" value={formData.email} onChange={handleChange} />
@@ -53,17 +53,17 @@ const Jobpost = () => {
         </div>
         <div className="row mb-3"> {/* Added row here */}
           <div className="col-12 mb-3">
-            <input type="text" className="form-control" name="jobTitle" id="inputAddress" placeholder="Job Title" value={formData.jobTitle} onChange={handleChange} />
+            <input type="text" className="form-control" name="job_tittle" id="inputAddress" placeholder="Job Title" value={formData.job_tittle} onChange={handleChange} />
           </div>
         </div>
         <div className="col-12 mb-3">
           <textarea className="form-control" name="description" id="inputAddress2" placeholder="Description" value={formData.description} onChange={handleChange} />
         </div>
         <div className="col-12 mb-3">
-          <textarea className="form-control" name="requirements" id="inputAddress2" placeholder="Requirements" value={formData.requirements} onChange={handleChange} />
+          <textarea className="form-control" name="requirments" id="inputAddress2" placeholder="Requirements" value={formData.requirments} onChange={handleChange} />
         </div>
         <div className="col-12 mb-3">
-          <input type="text" className="form-control" name="applyDate" id="inputAddress2" placeholder="DD/MM/YYYY (Last Date for Apply)" value={formData.applyDate} onChange={handleChange} />
+          <input type="text" className="form-control" name="date" id="inputAddress2" placeholder="DD/MM/YYYY (Last Date for Apply)" value={formData.date} onChange={handleChange} />
         </div>
         <button className="rounded bg-transparent" type="submit">Submit</button>
       </form>
