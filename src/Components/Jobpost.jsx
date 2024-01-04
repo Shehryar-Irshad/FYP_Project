@@ -39,8 +39,8 @@ const Jobpost = () => {
   };
 
   return (
-    <div className="container-fluid border border-info w-50 h-50 bg-info rounded" style={{ marginLeft: "300px", marginTop: "100px", borderRadius: "200%" }}>
-      <h1 className="text-center py-2">POST A JOB</h1>
+    <div className="container-fluid border border-info w-50 h-50 bg-dark rounded" style={{ marginLeft: "300px", marginTop: "100px", borderRadius: "200%" }}>
+      <h1 className="text-center py-2 text-primary">POST A JOB</h1>
 
       <form className="text-center" style={{ paddingTop: "20px", paddingBottom: "10px" }} onSubmit={handleSubmit}>
         <div className="row mb-3">
@@ -65,9 +65,9 @@ const Jobpost = () => {
         <div className="col-12 mb-3">
           <input type="text" className="form-control" name="date" id="inputAddress2" placeholder="DD/MM/YYYY (Last Date for Apply)" value={formData.date} onChange={handleChange} />
         </div>
-        <button className="rounded bg-transparent" type="submit">Submit</button>
+        <button className="rounded bg-transparent text-primary" type="submit">Submit</button>
       </form>
-      <div>
+      <div className="bg-white">
         <h1>{post}</h1>
       </div>
     </div>

@@ -15,7 +15,7 @@ const Login = () =>{
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = {
+    const user = {
       username,
       email,
       password,
@@ -24,16 +24,21 @@ const Login = () =>{
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/api/login/",
-        data
+        user
       );
       
       if (response.status === 200) {
         // Login successful
         console.log("Login successful");
 
+        // store the user in localStorage
+        localStorage.setItem('user',response.data);
+
         setPost("Login successful");
+
+        //Time out function to move to next page
         setTimeout(() => {
-          navigate('/');
+          navigate('/Userprofile', { state: { username } });
         }, 2000);
         }else {
           // Handle login error, display error message

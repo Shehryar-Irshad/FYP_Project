@@ -6,8 +6,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Routes, Route } from 'react-router-dom';
-import JobList from './Components/JobList';
-import Jobdetail from './Components/Jobdetail';
+import Jobs from './Components/Jobs';
 import Contact from './Components/Contact';
 import About from './Components/About';
 import Jobpost from './Components/Jobpost';
@@ -22,11 +21,11 @@ function App() {
     <div className='whole'>
       <div className='App'>
         <Navbar />
+       
         <Routes>
           <Route exact path='/' element={<Header />} />
           <Route exact path='/Home' element={<Header />} />
-          <Route path='/JobList' element={<JobList />} />
-          <Route path='/Jobdetail' element={<Jobdetail />} />
+          <Route path='/Jobs' element={<Jobs />} />
           <Route path='/Jobpost' element={<Jobpost />} />
           <Route path='/Signup' element={<Signup />} />
           <Route path='/Home/Signup' element={<Signup />} />

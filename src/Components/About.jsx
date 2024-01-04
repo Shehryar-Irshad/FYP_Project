@@ -19,13 +19,13 @@ const About = () =>{
 
 
 
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5 bg-primary bg-opacity-75" style={{ marginBottom:"-48px", marginTop:"-48px"}}>
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                        
                     </div>
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style={{marginLeft:"-260px", border:"2px solid black"}}>
                         <h1 class="mb-4">We Help To Get The Best Job And Find A Talent</h1>
                         <p class="mb-4">Welcome to <b>Job Entry</b>, your one-stop destination for finding the perfect job or ideal candidates to fill your company's positions. Our job portal is designed to simplify and streamline the job search process for both job seekers and employers.</p>
                         <h2>Our Mission</h2>

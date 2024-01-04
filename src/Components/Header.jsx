@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
     return (
 
-        <div className="">
+        <div className="" style={{marginBottom:"-48px"}}>
             <Carousel>
                 <Carousel.Item className="d-flex">
                     <img

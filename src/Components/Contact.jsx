@@ -1,8 +1,54 @@
 import React from "react";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {NavLink} from "react-router-dom";
 
 const Contact = () =>{
+    const [formData, setFormData] = useState({
+        your_name: "",
+        your_email: "",
+        subject: "",
+        message:""
+      });
+
+      const [post, setPost] = useState('');
+        const navigate = useNavigate();
+
+        const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+        };
+
+        const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Your API endpoint URL for sign-up
+        const apiUrl = 'http://127.0.0.1:8000/em_register/';
+
+        // Make the API request using Axios
+        axios.post(apiUrl, formData)
+            .then((response) => {
+            console.log('Message Sent!', response.data);
+            // Do something after successful sign-up, e.g., redirect to another page
+            setPost('Message Sent Successfully!');
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
+            })
+            .catch((error) => {
+            console.error('Message failed:', error);
+            // Handle error, e.g., show an error message to the user
+            setPost('Sign-up failed. Please try again.');
+            });
+        };
+
+
+
     return(
         <>
          <div class="container-xxl py-5 bg-dark page-header mb-5">
@@ -18,33 +64,27 @@ const Contact = () =>{
             </div>
         </div>
 
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5 bg-primary bg-opacity-75" style={{marginTop:"-48px", marginBottom:"-48px"}}>
             <div class="container">
                 <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Contact For Any Query</h1>
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="row gy-4">
                             <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="d-flex align-items-center bg-light rounded p-4">
-                                    <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style={{width: '45px', height: '45px'}}>
-                                        <i class="fa fa-map-marker-alt text-primary"></i>
-                                    </div>
+                                <div class="d-flex justify-content-center bg-light rounded p-3">
+                                    
                                     <span>123 Street, Lahore, Pakistan</span>
                                 </div>
                             </div>
                             <div class="col-md-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="d-flex align-items-center bg-light rounded p-4">
-                                    <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style={{width: '45px', height: '45px'}}>
-                                        <i class="fa fa-envelope-open text-primary"></i>
-                                    </div>
-                                    <span>info@example.com</span>
+                                <div class="d-flex justify-content-center bg-light rounded p-3">
+                                    
+                                    <span>info@jobentry.com</span>
                                 </div>
                             </div>
                             <div class="col-md-4 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="d-flex align-items-center bg-light rounded p-4">
-                                    <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style={{width: '45px', height: '45px'}}>
-                                        <i class="fa fa-phone-alt text-primary"></i>
-                                    </div>
+                                <div class="d-flex justify-content-center bg-light rounded p-3">
+                                   
                                     <span>+92 345768189</span>
                                 </div>
                             </div>
@@ -58,38 +98,41 @@ const Contact = () =>{
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Django in a while.</p>
-                            <form>
+                            
+                            <form onSubmit={handleSubmit}>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name"/>
+                                            <input type="text" class="form-control" name="your_name" placeholder="Your Name" onChange={handleChange}/>
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email"/>
+                                            <input type="email" class="form-control" name="your_email" placeholder="Your Email" onChange={handleChange}/>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject"/>
+                                            <input type="text" class="form-control" name="subject" placeholder="Subject" onChange={handleChange}/>
                                             <label for="subject">Subject</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style={{height: '150px'}}></textarea>
+                                            <textarea class="form-control" placeholder="Leave a message here" name="message" style={{height: '150px'}} onChange={handleChange}></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-dark w-100 py-3" type="submit">Send Message</button>
                                     </div>
                                 </div>
                             </form>
+                            <div>
+                                <h1>{post}</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
